@@ -1,0 +1,311 @@
+fileFormatVersion: 2
+guid: 0c5f67595bed5974b841469f024b5716
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: critter_0
+    21300002: critter_1
+    21300004: critter_2
+    21300006: critter_3
+    21300008: critter_4
+    21300010: critter_5
+    21300012: critter_6
+    21300014: critter_7
+    21300016: critter_8
+    21300018: critter_9
+    21300020: critter_10
+    21300022: critter_11
+    21300024: critter_12
+    21300026: critter_13
+    21300028: critter_14
+    21300030: critter_15
+    21300032: critter_16
+    21300034: critter_17
+    21300036: critter_18
+    21300038: critter_19
+    21300040: critter_20
+    21300042: critter_21
+    21300044: critter_22
+    21300046: critter_23
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 128
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 16
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: critter_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 112
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 112
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 112
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 112
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 112
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 112
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 112
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_9
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_11
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_12
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_13
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 96
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_15
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 96
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_17
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_18
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_19
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 80
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_20
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_21
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_22
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 80
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: critter_23
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 80
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: .5, y: .25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
