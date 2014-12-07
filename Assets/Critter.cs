@@ -11,6 +11,7 @@ public class Critter : MonoBehaviour {
     public float fallHeight;
     public float stepheight = 0.5f;
     public bool alive = true;
+    public bool stuck = false;
 
     public GameObject critter_splat;
 
@@ -47,24 +48,66 @@ public class Critter : MonoBehaviour {
     }
 
     void OnCollisionStay2D(Collision2D collision) {
-        foreach (ContactPoint2D contact in collision.contacts) {
+        bool step = true;
+        float height;
+        float maxHeight = 0f;
 
+        foreach (ContactPoint2D contact in collision.contacts) {
+            height = Mathf.Abs(transform.position.y - contact.point.y);
+
+            if (height > maxHeight) { maxHeight = height; }
+
+            if (height > stepheight) {
+                step = false;
+            }
         }
+
+        if(maxHeight < 0.01) {
+            step = false;
+        }
+
+        Debug.DrawLine(
+            new Vector3(transform.position.x - 0.2f, transform.position.y + maxHeight, 0),
+            new Vector3(transform.position.x + 0.2f, transform.position.y + maxHeight, 0),
+            Color.yellow
+        );
+
+        if(Mathf.Abs(rigidbody2D.velocity.x) < 0.1f) {
+            if(stuck) {
+                TurnAround();
+            } else {
+                stuck=true;
+            }
+            Debug.DrawLine(
+                new Vector3(transform.position.x, transform.position.y, transform.position.z),
+                new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z),
+                Color.magenta
+            );
+        }
+
+        if (step) {
+            falling = false;
+            transform.position = new Vector3(
+                transform.position.x,
+                transform.position.y + (maxHeight * 1.1f),
+                0
+            );
+        }
+    }
+
+    void TurnAround() {
+        left = !left;
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
         foreach (ContactPoint2D contact in collision.contacts) {
 
             if(Mathf.Abs(transform.position.y - contact.point.y) > stepheight) {
-                if (contact.normal.x < 0) {
-                    left = true;
-                } else if (contact.normal.x > 0) {
-                    left = false;
-                }
+                TurnAround();
 
-                Debug.DrawRay(
-                    new Vector3(contact.point.x, contact.point.y, 0),
-                    new Vector3(contact.point.x, contact.point.y + 1.0f, 0),
+                Debug.DrawLine(
+                    new Vector3(contact.point.x, transform.position.y, 0),
+                    new Vector3(contact.point.x, transform.position.y + 1.0f, 0),
                     Color.red
                 );
             }
@@ -82,6 +125,8 @@ public class Critter : MonoBehaviour {
                         transform.position,
                         transform.rotation
                     ) as GameObject;
+
+                    clone.transform.parent = transform;
                 } else {
                     animator.SetBool("falling", false);
                 }
@@ -90,10 +135,6 @@ public class Critter : MonoBehaviour {
             SetVelocity();              
 
             Debug.DrawRay(contact.point, contact.normal, Color.white);
-        }
-            
-        if(collision.collider.tag == "Target") {
-
         }
     }
 
@@ -108,13 +149,17 @@ public class Critter : MonoBehaviour {
         }
     }
 
-    void StepUp() {
+    void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "Target") {
+            Escape();
+        }
+    }
+
+    void Escape() {
         if(alive) {
-            if(left) {
-                rigidbody2D.velocity = new Vector2(-1, 1);
-            } else {
-                rigidbody2D.velocity = new Vector2( 1, 1);
-            }
+            alive = false;
+            animator.SetTrigger("escape");
+            Destroy(rigidbody2D);
         }
     }
 }

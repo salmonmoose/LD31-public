@@ -6,6 +6,10 @@ public class Spawner : MonoBehaviour {
 	public int count = 100;
 	public float dropTimeLength = 20.0f;
 	private float nextDrop = 0.0f;
+	private float dropIncriment;
+	private int remaining;
+
+	private bool playing = false;
 
 	public GameObject critterFab;
 
@@ -13,33 +17,55 @@ public class Spawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		critters = new GameObject[count];
-		for (int i = 0; i < count; i ++) {
-			GameObject go = Instantiate(
-				critterFab,
-				transform.position,
-				transform.rotation
-			) as GameObject;
-
-			go.active = false;
-
-			critters[i] = go;
-		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Time.time > nextDrop) {
-			nextDrop = Time.time + (dropTimeLength / count);
-			DropCritter();
+		if (playing) {
+			if (Time.time > nextDrop) {
+				nextDrop = Time.time + dropIncriment;
+				DropCritter();
+			}
 		}
 	}
 
-	void DropCritter() {
-		if (count > 0) {
-			critters[count -1].active = true;
+	void Reset() {
+		int children = transform.childCount;
+        for (int i = 0; i < children; i++) {
+            GameObject.Destroy(transform.GetChild(i).gameObject);
+        }
 
-			count = count -1;
+		playing = false;
+		remaining = count;
+		critters = new GameObject[count];
+
+		dropIncriment = dropTimeLength / count;
+
+		for (int i = 0; i < count; i ++) {
+			GameObject go = Instantiate(
+				critterFab,
+				transform.position,
+				Quaternion.identity
+			) as GameObject;
+
+			go.transform.parent = transform;
+
+			go.SetActive(false);
+
+			critters[i] = go;
+		}
+
+	}
+
+	void Activate() {
+		playing = true;
+	}
+
+	void DropCritter() {
+		if (remaining > 0) {
+			critters[remaining -1].SetActive(true);
+
+			remaining = remaining - 1;
 		}
 	}
 }
