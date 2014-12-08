@@ -35,6 +35,8 @@ public class Spawner : MonoBehaviour {
             GameObject.Destroy(transform.GetChild(i).gameObject);
         }
 
+        Level.instance.AddCritterTotal(count);
+
 		playing = false;
 		remaining = count;
 		critters = new GameObject[count];
@@ -64,6 +66,7 @@ public class Spawner : MonoBehaviour {
 	void DropCritter() {
 		if (remaining > 0) {
 			critters[remaining -1].SetActive(true);
+			Level.instance.SpawnCritter();
 
 			remaining = remaining - 1;
 		}

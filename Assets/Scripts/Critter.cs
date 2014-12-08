@@ -40,6 +40,11 @@ public class Critter : MonoBehaviour {
             } else if (rigidbody2D.velocity.x < -0.1) {
                 left = true;
             }
+
+            if(Level.instance.OutOfBounds(transform.position)) {
+                Level.instance.KillCritter();
+                alive = false;
+            }
         }
     }
     
@@ -115,6 +120,8 @@ public class Critter : MonoBehaviour {
             if(alive) {
                 falling = false;
                 if (Mathf.Abs(transform.position.y - fallHeight) > terminalVelocity) {
+                    Level.instance.KillCritter();
+
                     alive = false;
                     
                     animator.SetTrigger("splat");
@@ -158,6 +165,7 @@ public class Critter : MonoBehaviour {
     void Escape() {
         if(alive) {
             alive = false;
+            Level.instance.SaveCritter();
             animator.SetTrigger("escape");
             Destroy(rigidbody2D);
         }
